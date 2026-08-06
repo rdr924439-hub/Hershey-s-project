@@ -1,94 +1,155 @@
+/* Reset everything */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
 
-background:linear-gradient(
-45deg,
-#ff5f6d,
-#ffc371,
-#42e695,
-#3bb2b8,
-#6a11cb
-);
+    height:100vh;
 
-background-size:400% 400%;
+    display:flex;
 
-animation:bg 8s infinite;
+    justify-content:center;
 
-font-family:Arial;
+    align-items:center;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+    -45deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff,
+    #06d6a0,
+    #ffd60a
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 12s ease infinite;
+
+}
+
+/* Animated Background */
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Glass Card */
+
+.container{
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+padding:40px;
+
+border-radius:30px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.3);
 
 text-align:center;
 
-padding-top:80px;
+width:500px;
 
-color:white;
-
-}
-
-@keyframes bg{
-
-0%{background-position:0% 50%;}
-
-50%{background-position:100% 50%;}
-
-100%{background-position:0% 50%;}
+animation:pop .8s;
 
 }
+
+/* Title */
 
 h1{
 
-font-size:55px;
+font-size:48px;
+
+color:white;
+
+margin-bottom:30px;
+
+text-shadow:0 0 20px white;
 
 }
 
+/* Rainbow Button */
+
 button{
 
-padding:20px 40px;
+padding:18px 40px;
 
-font-size:24px;
+font-size:22px;
+
+font-weight:bold;
 
 border:none;
 
-border-radius:50px;
+border-radius:60px;
 
 cursor:pointer;
 
+color:white;
+
 background:linear-gradient(
 90deg,
-yellow,
+red,
 orange,
-hotpink,
+yellow,
+lime,
 cyan,
-lime
+blue,
+violet,
+red
 );
 
-background-size:300%;
+background-size:600%;
 
-animation:buttonMove 4s infinite;
+animation:rainbow 5s linear infinite;
 
 transition:.3s;
+
+box-shadow:
+0 0 20px hotpink;
 
 }
 
 button:hover{
 
-transform:scale(1.1);
+transform:scale(1.1) rotate(-2deg);
+
+box-shadow:
+0 0 40px white;
 
 }
 
-@keyframes buttonMove{
-
-0%{
-
-background-position:0%;
-
-}
+@keyframes rainbow{
 
 100%{
 
-background-position:300%;
+background-position:600%;
 
 }
 
 }
+
+/* Hidden Box */
 
 #messageBox{
 
@@ -96,18 +157,271 @@ display:none;
 
 margin-top:30px;
 
+animation:slide .5s;
+
 }
+
+/* Textbox */
 
 textarea{
 
-width:300px;
+margin-top:20px;
 
-height:120px;
+width:100%;
+
+height:140px;
+
+padding:15px;
+
+border-radius:20px;
 
 font-size:18px;
 
-padding:10px;
+border:none;
 
-border-radius:15px;
+resize:none;
+
+}
+
+/* Animations */
+
+@keyframes slide{
+
+from{
+
+opacity:0;
+
+transform:translateY(-30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+/* Particle Layer */
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+/* Individual Particle */
+
+.particle{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.6;
+
+animation:float linear infinite;
+
+box-shadow:
+
+0 0 15px white;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+
+translateY(110vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-10vh);
+
+opacity:0;
+
+}
+
+}
+/* Particle Layer */
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+/* Individual Particle */
+
+.particle{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.6;
+
+animation:float linear infinite;
+
+box-shadow:
+
+0 0 15px white;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+
+translateY(110vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(-10vh);
+
+opacity:0;
+
+}
+
+}
+.cursorGlow{
+
+position:fixed;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:white;
+
+pointer-events:none;
+
+box-shadow:
+
+0 0 30px white,
+
+0 0 60px cyan,
+
+0 0 90px hotpink;
+
+transform:translate(-50%,-50%);
+
+}
+.buttonWrapper{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+#ripple{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+width:10px;
+
+height:10px;
+
+background:white;
+
+border-radius:50%;
+
+transform:translate(-50%,-50%) scale(0);
+
+opacity:0;
+
+pointer-events:none;
 
 }

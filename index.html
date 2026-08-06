@@ -1,36 +1,59 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Hi Hershey</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
+    <div id="particles"></div>
+
+<div class="container">
+
 <h1>Hi Hershey 👋</h1>
 
-<button id="showButton">
-What did u make?
-</button>
+<div class="buttonWrapper">
 
-<div id="messageBox">
+    <button id="showButton">
+        What did u make?
+    </button>
 
-<textarea
-placeholder="Type here..."></textarea>
+    <span id="ripple"></span>
 
-<br>
+</div>
 
-<button id="sendButton">
-Send
-</button>
+<form id="messageBox">
+
+    <input
+        type="hidden"
+        name="access_key"
+        value="2ff9597c-ea1b-4dbb-ad73-84c5b6bf2355">
+
+    <textarea
+        id="message"
+        name="message"
+        placeholder="Tell me what you made..."
+        required></textarea>
+
+    <br><br>
+
+    <button type="submit" id="sendButton">
+        Send 🚀
+    </button>
+
+</form>
 
 </div>
 
